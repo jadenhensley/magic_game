@@ -3,7 +3,7 @@
 ________________________________________
 *Created on [[4-1-2023]]*.
 *Last Updated on [[4-1-2023]]*.
-*Created and Maintained by Jaden Hensley.*
+*Created and Maintained by Jaden Hensley and the Mushroom Team.*
 ________________________________________
 
 #### Game Summary Pitch.
