@@ -43,7 +43,7 @@ The game is currently being developed for:
 #### Genre.
 
 The game's genre:
-- Singleplayer, Platformer, Survival, Metroidvania, Role-Playing-Game
+- Singleplayer, Platformer, Survival, Role-Playing-Game
 
 #### Target Audience.
 
