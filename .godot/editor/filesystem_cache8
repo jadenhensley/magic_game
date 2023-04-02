@@ -1,14 +1,24 @@
 2a60927148abd1d33b818b535e306557
-::res://::1680468066
-GroundConstructor.gd::GDScript::-1::1680456827::0::1::::<>Node2D<>::
-ground_scene.tscn::PackedScene::7460247625728373123::1680465957::0::1::::<><>::uid://bdmlv2utx1qad
-icon.svg::CompressedTexture2D::6634420336351973691::1680444019::1680444028::1::::<><>::
-Node2D_Scene.gd::GDScript::-1::1680460292::0::1::::<>Node2D<>::
-node_2d_scene.tscn::PackedScene::5339045530512270194::1680465997::0::1::::<><>::res://Node2D_Scene.gd<>res://Player.gd<>res://GroundConstructor.gd
-Player.gd::GDScript::-1::1680463822::0::1::::<>Node2D<>::
-README.md::TextFile::-1::1680467859::0::1::::<><>::
-::res://Assets/::1680467974
-bushes.png::CompressedTexture2D::1312262698195711218::1680462703::1680468066::1::::<><>::
-dirt.png::CompressedTexture2D::2622466586169940835::1680462554::1680468066::1::::<><>::
-::res://Assets/Images/::1680467859
-Bushes.png::CompressedTexture2D::7496916085726967662::1680467859::1680468066::1::::<><>::
+::res://::1680473006
+ground_scene.tscn::PackedScene::7460247625728373123::1680472890::0::1::::<><>::uid://bdmlv2utx1qad
+icon.svg::CompressedTexture2D::6634420336351973691::1680471020::1680472919::1::::<><>::
+README.md::TextFile::-1::1680471020::0::1::::<><>::
+::res://Assets/::1680472890
+bushes.png::CompressedTexture2D::1312262698195711218::1680472889::1680472890::1::::<><>::
+dirt.png::CompressedTexture2D::2622466586169940835::1680472889::1680472890::1::::<><>::
+::res://Assets/Images/::1680472890
+Bushes.png::CompressedTexture2D::7496916085726967662::1680472889::1680472890::1::::<><>::
+::res://src/::1680473001
+::res://src/Assets/::1680472889
+::res://src/Assets/Enemys/::1680472225
+::res://src/Assets/Player/::1680472214
+::res://src/Scenes/::1680473006
+Node2D_Scene.gd::GDScript::-1::1680472889::0::1::::<>Node2D<>::
+node_2d_scene.tscn::PackedScene::-1::1680473006::0::1::::<><>::
+::res://src/Scripts/::1680472960
+::res://src/Scripts/Class Scripts/::1680472278
+::res://src/Scripts/Enemy Scripts/::1680472305
+::res://src/Scripts/Player Scripts/::1680472952
+Player.gd::GDScript::-1::1680472890::0::1::::<>Node2D<>::
+::res://src/Scripts/World Scripts/::1680472967
+GroundConstructor.gd::GDScript::-1::1680472890::0::1::::<>Node2D<>::
