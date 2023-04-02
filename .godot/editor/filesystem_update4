@@ -1,5 +1,4 @@
 res://node_2d_scene.tscn
-res://Node2D_Scene.gd
 res://ground_scene.tscn
-res://Node2D_Player.gd
 res://Player.gd
+res://GroundConstructor.gd

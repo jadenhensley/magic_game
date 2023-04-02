@@ -15,6 +15,7 @@ enum CollisionType {
 	COLLISION_WITH_OBJECT
 }
 
+const BASE_SPEED = 5.0
 
 @onready var direction: Vector2i = Vector2i(0, 0)
 @onready var speed: Vector2 = Vector2(5.0, 5.0)
@@ -22,6 +23,8 @@ enum CollisionType {
 @onready var player_status_vertical = PlayerState.PLAYER_IN_AIR
 @onready var collisions_types: Array[CollisionType] = []
 @onready var collisions_positions: Array[Vector2i] = [] 
+
+@export var DEBUG: bool
 
 func _ready() -> void:
 	pass
@@ -42,7 +45,8 @@ func get_input_direction_xy() -> Vector2i:
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("ground_tile"):
-		print("colliding with ground at [x: ", position.x, "| y: ", position.y, "]")
+		if DEBUG:
+			print("colliding with ground at [x: ", position.x, ", y: ", position.y, "]")
 		collisions_positions.append(Vector2i(position.x, position.y))
 		collisions_types.append(CollisionType.COLLISION_WITH_GROUND)
 		
@@ -50,7 +54,11 @@ func _on_area_2d_area_entered(area):
 
 func _process(delta) -> void:
 	direction = get_input_direction_xy()
-
+	
+	if (Input.get_action_strength("run")):
+		speed.x = BASE_SPEED * 2
+	else:
+		speed.x = BASE_SPEED
 
 	move_local_x(direction.x * speed.x, true)
 	
