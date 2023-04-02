@@ -25,7 +25,7 @@ func spawn_ground_tile(x: int, y: int, color = null) -> void:
 
 
 func _ready():
-		
+	
 	
 	for iy in range(12):
 		for ix in range(50):
