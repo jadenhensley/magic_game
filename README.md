@@ -167,15 +167,22 @@ I want the core feature of this game to be its gameplay mechanics and features. 
 #### (4-2-2023)
 
 - Created Team Mushroom.
+- Created the Godot project for the game.
+- Created Github repository for the game.
+- Added members to the team.
+- Got Tile Spawning working.
+- Got Randomized Tile Colors working.
+- Got 2D Player Movement working.
+- Team members prototyped some tree / bush assets.
 
 #### (4-1-2023)
 
-- Created the Game Design Document
-- Brainstormed ideas for the game
-- Decided on Gameplay Mechanics and Gameplay Features
-- Installed Godot 4
+- Created the Game Design Document.
+- Brainstormed ideas for the game.
+- Decided on Gameplay Mechanics and Gameplay Features.
+- Installed Godot 4.
 - Learned the essential syntax of Godot's gdscript with a tutorial.
-- Failing to write my first shader using gdscript and gdshader
+- Failing to write my first shader using gdscript and gdshader.
 	- Need to learn how to read documentation.
 
 
