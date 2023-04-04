@@ -164,19 +164,34 @@ I want the core feature of this game to be its gameplay mechanics and features. 
 
 ## Development Log.
 
+#### (4-3-2023)
+
+(jaden)
+- Learned modular code structure for classes (components), resources, and export parameters (editor parameters).
+- Began implementing solid jump physics.
+(zneeke)
+- Created spritesheet for player, enemy entities, tools, and weapons.
+(kirro)
+- Created spritesheet for ground tileset.
+
 #### (4-2-2023)
 
+(jaden)
 - Created Team Mushroom.
 - Created the Godot project for the game.
 - Created Github repository for the game.
 - Added members to the team.
 - Got Tile Spawning working.
 - Got Randomized Tile Colors working.
-- Got 2D Player Movement working.
-- Team members prototyped some tree / bush assets.
+- Got 2D Player Movement working. (jump still needed, etc.)
+(team)
+- Team members started making some sprites.
+(kirro)
+- Began creating sprites for trees and bushes.
 
 #### (4-1-2023)
 
+(jaden)
 - Created the Game Design Document.
 - Brainstormed ideas for the game.
 - Decided on Gameplay Mechanics and Gameplay Features.
