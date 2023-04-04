@@ -168,7 +168,9 @@ I want the core feature of this game to be its gameplay mechanics and features. 
 
 (jaden)
 - Learned modular code structure for classes (components), resources, and export parameters (editor parameters).
+- Made existing code more modular with Components and Resources. (classes)
 - Began implementing solid jump physics.
+- Implemented a basic jump using the JumpComponent I created with a JumpParametersResource. (jump needs fine-tuned and more polish so game controls fluidly)
 
 (zneeke)
 - Created spritesheet for player, enemy entities, tools, and weapons.
