@@ -10,7 +10,7 @@ ________________________________________
 
 #### Game Summary Pitch.
 
-*Unnamed 2D Magic Game* is a 2D Side-Scroller Game involving reality-bending magic alchemy, survival elements, and action-packed combat featuring various weapons and abilities that intertwine with said magic.
+*Unnamed 2D Magic Game* is a 2D Side-Scroller Fantasy Game involving reality-bending magic alchemy, survival elements, and action-packed combat featuring various weapons and abilities that intertwine with said magic.
 
 ## About.
 
@@ -28,7 +28,7 @@ This is a game being worked on for the game jam and later on for personal or com
 
 #### Game Summary Pitch.
 
-*Unnamed 2D Magic Game* is a 2D Side-Scroller Game involving reality-bending magic alchemy, survival elements, and action-packed combat featuring various weapons and abilities that intertwine with said magic.
+*Unnamed 2D Magic Game* is a 2D Side-Scroller Fantasy Game involving reality-bending magic alchemy, survival elements, and action-packed combat featuring various weapons and abilities that intertwine with said magic.
 
 #### Interpretation of the Theme.
 
@@ -43,7 +43,7 @@ The game is currently being developed for:
 #### Genre.
 
 The game's genre:
-- Singleplayer, Platformer, Survival, Role-Playing-Game
+- Singleplayer, Platformer, Survival, Role-Playing-Game, Fantasy
 
 #### Target Audience.
 
