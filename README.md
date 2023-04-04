@@ -169,8 +169,10 @@ I want the core feature of this game to be its gameplay mechanics and features. 
 (jaden)
 - Learned modular code structure for classes (components), resources, and export parameters (editor parameters).
 - Began implementing solid jump physics.
+
 (zneeke)
 - Created spritesheet for player, enemy entities, tools, and weapons.
+
 (kirro)
 - Created spritesheet for ground tileset.
 
@@ -184,8 +186,10 @@ I want the core feature of this game to be its gameplay mechanics and features. 
 - Got Tile Spawning working.
 - Got Randomized Tile Colors working.
 - Got 2D Player Movement working. (jump still needed, etc.)
+
 (team)
 - Team members started making some sprites.
+
 (kirro)
 - Began creating sprites for trees and bushes.
 
