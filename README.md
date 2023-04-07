@@ -164,6 +164,18 @@ I want the core feature of this game to be its gameplay mechanics and features. 
 
 ## Development Log.
 
+#### (4-5-2023)
+
+(team)
+- worked on game assets
+
+#### (4-4-2023)
+
+(jaden)
+- Implemeneted ground tilemap
+- Created first level
+- Finished boiler plate jump.
+
 #### (4-3-2023)
 
 (jaden)

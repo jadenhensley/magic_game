@@ -3,7 +3,7 @@ extends Node2D
 const GROUND_TILE_SIZE := 48
 
 func spawn_ground_tile(x: int, y: int, color = null) -> void:
-	var groundtile_scene = load("ground_scene.tscn")
+	var groundtile_scene = load("res://src/Scenes/World Object Scenes/ground_scene.tscn")
 	var groundtile = groundtile_scene.instantiate()
 	
 	var color_rect = groundtile.get_node("ColorRect")
@@ -26,18 +26,19 @@ func spawn_ground_tile(x: int, y: int, color = null) -> void:
 
 func _ready():
 	
+	pass
 	
-	for iy in range(12):
-		for ix in range(50):
-			if (iy > 0):
-				spawn_ground_tile(ix*GROUND_TILE_SIZE,400+iy*GROUND_TILE_SIZE)
-			else:
-				var color = Color(
-					float(129)/255,
-					float(randi_range(150,255))/255,
-					float(19)/255
-				)
-				spawn_ground_tile(ix*GROUND_TILE_SIZE,400+iy*GROUND_TILE_SIZE, color)
+#	for iy in range(12):
+#		for ix in range(50):
+#			if (iy > 0):
+#				spawn_ground_tile(ix*GROUND_TILE_SIZE,400+iy*GROUND_TILE_SIZE)
+#			else:
+#				var color = Color(
+#					float(129)/255,
+#					float(randi_range(150,255))/255,
+#					float(19)/255
+#				)
+#				spawn_ground_tile(ix*GROUND_TILE_SIZE,400+iy*GROUND_TILE_SIZE, color)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

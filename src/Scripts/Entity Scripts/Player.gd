@@ -3,11 +3,23 @@ extends Entity
 class_name Player
 
 
+
 func _ready() -> void:
-	if (jump_component == null) and DEBUG:
+	for i in range(6):
+		raycasts_below.append(RayCast2D.new())
+		raycasts_below[i-1].position.x = 12 * (i-1)
+		raycasts_below[i-1].position.y = 106
+	if (jump_component == null) and (DEBUG):
 		print("[In Player] No JumpComponent was provided.")
-	else:
-		pass
+		assert (jump_component != null)
+	if (len(raycasts_below) == 0) and (DEBUG):
+		print("[In Player] No Raycasts were provided. (raycasts_below)")
+		assert (len(raycasts_below) > 0)
+
+func _draw() -> void:
+	pass
+#	for raycast in raycasts_below:
+#		draw_rect(Rect2(raycast.position.x, raycast.position.y,5, 5), Color(1,0,0), true)
 
 func get_input_direction_x() -> int:
 	var input_direction: int = Input.get_axis("left","right")
@@ -30,18 +42,19 @@ func _on_area_2d_area_entered(area):
 		collisions_positions.append(Vector2i(position.x, position.y))
 		collisions_types.append(CollisionType.COLLISION_WITH_GROUND)
 		
-		if player_status_vertical in [PlayerState.PLAYER_IN_AIR, PlayerState.PLAYER_JUMPING, PlayerState.PLAYER_ON_LADDER]:
-			player_status_vertical = PlayerState.PLAYER_TOUCHED_GROUND
+#		if player_status_vertical in [PlayerState.PLAYER_IN_AIR, PlayerState.PLAYER_JUMPING, PlayerState.PLAYER_ON_LADDER]:
+#			player_status_vertical = PlayerState.PLAYER_TOUCHED_GROUND
 
 func _process(delta) -> void:
 	direction = get_input_direction_xy()
 	
 	if (Input.get_action_strength("run")):
-		speed.x = BASE_SPEED * 1.4
+		velocity.x = speed.x * 1.4 * direction.x
 	else:
-		speed.x = BASE_SPEED
+		velocity.x = speed.x * direction.x
 
-	move_local_x(direction.x * speed.x, true)
+#	move_local_x(direction.x * speed.x, true)
+	move_and_slide()
 	
 #	if (player_status_vertical == PlayerState.PLAYER_IN_AIR) or (player_status_vertical == PlayerState.PLAYER_ON_LADDER): 
 #		if (player_status_vertical == PlayerState.PLAYER_IN_AIR):

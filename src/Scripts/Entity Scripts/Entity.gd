@@ -29,8 +29,6 @@ enum CollisionType {
 	COLLISION_WITH_OBJECT
 }
 
-const BASE_SPEED = 5.0
-
 @export var direction: Vector2i = Vector2i(0, 0)
 @export var speed: Vector2 = Vector2(5.0, 5.0)
 @export var gravity: int = 5
@@ -45,3 +43,5 @@ const BASE_SPEED = 5.0
 @export var IS_PLAYER: bool = false
 
 @export var jump_component: JumpComponent
+
+@onready var raycasts_below: Array[RayCast2D] = []
