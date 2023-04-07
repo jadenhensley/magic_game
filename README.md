@@ -22,7 +22,7 @@ The rest of this document goes over all the details of what I want this future g
 
 This Game Design Document was created on the first day of the first week of the game jam. The game jam is 2 weeks long. This document will be updated whenever I need it to be updated. 
 
-This is a game being worked on for the game jam and later on for personal or commercial purposes.
+This is a game being worked on for the game jam. Afterwards, the game will be a passion project to be worked on until the game is considered playable and enjoyable enough. The game is made under a open source license with a team of passionate developers and artists. For the time being the game is free, but we are open to commercializing the game or making some profit off it be it through selling the game or receiving donations.
 
 ## Introduction.
 
@@ -180,7 +180,9 @@ I want the core feature of this game to be its gameplay mechanics and features. 
 
 (jaden)
 - Learned modular code structure for classes (components), resources, and export parameters (editor parameters).
+- Made existing code more modular with Components and Resources. (classes)
 - Began implementing solid jump physics.
+- Implemented a basic jump using the JumpComponent I created with a JumpParametersResource. (jump needs fine-tuned and more polish so game controls fluidly)
 
 (zneeke)
 - Created spritesheet for player, enemy entities, tools, and weapons.
