@@ -164,6 +164,16 @@ I want the core feature of this game to be its gameplay mechanics and features. 
 
 ## Development Log.
 
+#### (4-8-2023)
+
+- Learning how to do screen transitions.
+- Started developing screen transitions.
+- Almost got introduction to game going.
+
+#### (4-7-2023)
+
+- Submitted the game's GDD and repository to Thor.
+
 #### (4-5-2023)
 
 (team)

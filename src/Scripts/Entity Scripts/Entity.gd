@@ -41,6 +41,7 @@ enum CollisionType {
 
 @export var DEBUG: bool = true
 @export var IS_PLAYER: bool = false
+@export var IS_PAUSED: bool = false
 
 @export var jump_component: JumpComponent
 

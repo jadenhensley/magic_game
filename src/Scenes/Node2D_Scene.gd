@@ -1,12 +1,21 @@
 extends Node2D
 
+@onready var scene_transition_startofgame_node: SceneTransition = $SceneTransitionFade
+@onready var player: Player = $Player
+@onready var intro_text_label = $CanvasLayerIntroText/LabelIntroText
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	intro_text_label.visible = false	
+	player.IS_PAUSED = true
+	await scene_transition_startofgame_node.play_animation("dissolve")
+	intro_text_label.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-#	print(get_tree().get_nodes_in_group("ground_tile"))	
 	pass
+#	if (intro_text_label.visible == true):
+#		await scene_transition_startofgame_node.play_animation("reversed")
+#		intro_text_label.visible = false
+#

@@ -65,4 +65,3 @@ func _physics_process(delta):
 		if (jump_released):
 			parent_node.velocity.y = parent_node.jump_strength / 2
 					
-	parent_node.move_and_slide()
