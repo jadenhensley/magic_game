@@ -56,7 +56,7 @@ func _process(delta) -> void:
 #	move_local_x(direction.x * speed.x, true)
 
 	if (IS_PAUSED == false):
-		move_and_slide()
+		move_and_slide(); move_and_slide()
 	
 #	if (player_status_vertical == PlayerState.PLAYER_IN_AIR) or (player_status_vertical == PlayerState.PLAYER_ON_LADDER): 
 #		if (player_status_vertical == PlayerState.PLAYER_IN_AIR):

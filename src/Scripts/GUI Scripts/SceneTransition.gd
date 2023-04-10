@@ -4,7 +4,7 @@ class_name SceneTransition
 
 @export var scene_transition_resource: SceneTransitionResource
 
-@onready var recognized_animations: Array = ["RESET", "dissolve"]
+@onready var recognized_animations: Array = ["RESET", "dissolve", "reversed", "wait_for_intro"]
 
 @onready var recognized_scenes: Dictionary = {
 	"default_level":"res://src/Scenes/Level Scenes/default_level.tscn",
@@ -18,8 +18,11 @@ func play_animation(animation: String) -> void:
 				$AnimationPlayer.play(animation)
 				await $AnimationPlayer.animation_finished
 			"reversed":
-				$AnimationPlayer.play_backwards(animation)
+				$AnimationPlayer.play_backwards("dissolve")
 				await $AnimationPlayer.animation_started
+			"wait_for_intro":
+				$AnimationPlayer.play(animation)
+				await $AnimationPlayer.animation_finished
 			_:
 				$AnimationPlayer.play(animation)
 				await $AnimationPlayer.animation_finished
