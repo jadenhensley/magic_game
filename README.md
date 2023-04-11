@@ -164,14 +164,25 @@ I want the core feature of this game to be its gameplay mechanics and features. 
 
 ## Development Log.
 
+#### (4-10-2023)
+
+- Started designing and developing the inventory/menu.
+
+#### (4-9-2023)
+
+(jaden)
+- Finished intro dialogue and screen transitions.
+
 #### (4-8-2023)
 
+(jaden)
 - Learning how to do screen transitions.
 - Started developing screen transitions.
 - Almost got introduction to game going.
 
 #### (4-7-2023)
 
+(jaden)
 - Submitted the game's GDD and repository to Thor.
 
 #### (4-5-2023)
