@@ -12,23 +12,31 @@ extends Node2D
 @onready var fps_label: Label = $Player/Camera2D/LabelFPS
 @onready var fps_label_text: String = "FPS: %d"
 
+@onready var skip_intro_scene: bool = true
+@onready var display_fps: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	intro_text_label.visible = false	
-	start_game_button.visible = false
-	player.IS_PAUSED = true
-	fps_label.visible = false # make true if you need to debug framerate
-	await scene_transition_startofgame_node.play_animation("dissolve")
-	intro_text_label.visible = true
-	intro_text_timer.wait_time = 10.0
-	intro_text_timer.autostart = true
-	start_game_button.pressed.connect(self._start_game_button_pressed)
+	if (skip_intro_scene):
+		intro_text_label.visible = false
+		start_game_button.visible = false
+		start_game_button_pressable = false
+		player.IS_PAUSED = false
+	else:
+		intro_text_label.visible = false	
+		start_game_button.visible = false
+		player.IS_PAUSED = true
+		fps_label.visible = false # make true if you need to debug framerate
+		await scene_transition_startofgame_node.play_animation("dissolve")
+		intro_text_label.visible = true
+		intro_text_timer.wait_time = 10.0
+		intro_text_timer.autostart = true
+		start_game_button.pressed.connect(self._start_game_button_pressed)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if (intro_text_label.visible == true):
+	if (intro_text_label.visible == true) and (not skip_intro_scene):
 		if (not intro_done):
 			if (not intro_text_timer_started):
 				intro_text_timer.start()
@@ -38,7 +46,10 @@ func _process(delta):
 				start_game_button.visible = true
 				start_game_button_pressable = true
 	if (not player.IS_PAUSED):
-		fps_label.text = fps_label_text % Engine.get_frames_per_second()
+		if (display_fps):
+			fps_label.text = fps_label_text % Engine.get_frames_per_second()
+		else:
+			fps_label.text = ""
 	else:
 		fps_label.text = "PAUSED"
 		

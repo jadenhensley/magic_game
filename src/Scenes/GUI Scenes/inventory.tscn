@@ -1,0 +1,250 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqn5vpwivylui"]
+
+[ext_resource type="Texture2D" uid="uid://cjbk5kgba5yi6" path="res://Assets/Images/GUI_AvatarFaceIcon.png" id="1_172wv"]
+[ext_resource type="Script" path="res://src/Scripts/GUI Scripts/Inventory.gd" id="1_jl1eo"]
+[ext_resource type="Script" path="res://src/Scripts/GUI Scripts/InventorySlot.gd" id="2_bcyj1"]
+
+[sub_resource type="Gradient" id="Gradient_70qd2"]
+offsets = PackedFloat32Array(0, 0.554688, 0.8125, 0.997396, 1)
+colors = PackedColorArray(0, 0, 0.646827, 1, 0.128468, 0.128468, 0.435837, 1, 0.0944532, 0, 0.726057, 1, 0.244792, 0.244792, 0.244792, 1, 0.054242, 0.292073, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xymff"]
+gradient = SubResource("Gradient_70qd2")
+
+[node name="Inventory" type="Node2D"]
+script = ExtResource("1_jl1eo")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 512.0
+offset_right = 1024.0
+offset_bottom = 512.0
+rotation = -4.71239
+texture = SubResource("GradientTexture1D_xymff")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_right = 522.0
+offset_bottom = 524.0
+columns = 5
+metadata/_edit_lock_ = true
+
+[node name="InventorySlot" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_bcyj1")
+metadata/_edit_lock_ = true
+
+[node name="InventorySlot2" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_bcyj1")
+metadata/_edit_lock_ = true
+
+[node name="InventorySlot3" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_bcyj1")
+metadata/_edit_lock_ = true
+
+[node name="InventorySlot4" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_bcyj1")
+metadata/_edit_lock_ = true
+
+[node name="InventorySlot5" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_bcyj1")
+metadata/_edit_lock_ = true
+
+[node name="InventorySlot6" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_bcyj1")
+metadata/_edit_lock_ = true
+
+[node name="InventorySlot7" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_bcyj1")
+metadata/_edit_lock_ = true
+
+[node name="InventorySlot8" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_bcyj1")
+metadata/_edit_lock_ = true
+
+[node name="InventorySlot9" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_bcyj1")
+metadata/_edit_lock_ = true
+
+[node name="InventorySlot10" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_bcyj1")
+metadata/_edit_lock_ = true
+
+[node name="InventorySlot11" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_bcyj1")
+metadata/_edit_lock_ = true
+
+[node name="InventorySlot12" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_bcyj1")
+metadata/_edit_lock_ = true
+
+[node name="InventorySlot13" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_bcyj1")
+metadata/_edit_lock_ = true
+
+[node name="InventorySlot14" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_bcyj1")
+metadata/_edit_lock_ = true
+
+[node name="InventorySlot15" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_bcyj1")
+metadata/_edit_lock_ = true
+
+[node name="InventorySlot16" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_bcyj1")
+metadata/_edit_lock_ = true
+
+[node name="InventorySlot17" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_bcyj1")
+metadata/_edit_lock_ = true
+
+[node name="InventorySlot18" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_bcyj1")
+metadata/_edit_lock_ = true
+
+[node name="InventorySlot19" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_bcyj1")
+metadata/_edit_lock_ = true
+
+[node name="InventorySlot20" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_bcyj1")
+metadata/_edit_lock_ = true
+
+[node name="InventorySlot21" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_bcyj1")
+metadata/_edit_lock_ = true
+
+[node name="InventorySlot22" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_bcyj1")
+metadata/_edit_lock_ = true
+
+[node name="InventorySlot23" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_bcyj1")
+metadata/_edit_lock_ = true
+
+[node name="InventorySlot24" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_bcyj1")
+metadata/_edit_lock_ = true
+
+[node name="InventorySlot25" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_bcyj1")
+metadata/_edit_lock_ = true
+
+[node name="CloseMenuButton" type="Button" parent="."]
+offset_left = 350.0
+offset_right = 478.0
+offset_bottom = 64.0
+
+[node name="Label" type="Label" parent="CloseMenuButton"]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 90.0
+offset_bottom = 36.0
+scale = Vector2(1.4, 1.4)
+text = "Close Menu"
+
+[node name="SaveGameButton" type="Button" parent="."]
+offset_left = 350.0
+offset_top = 204.0
+offset_right = 478.0
+offset_bottom = 268.0
+
+[node name="Label" type="Label" parent="SaveGameButton"]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 90.0
+offset_bottom = 36.0
+scale = Vector2(1.4, 1.4)
+text = "Save Game"
+
+[node name="LoadGameButton" type="Button" parent="."]
+offset_left = 350.0
+offset_top = 272.0
+offset_right = 478.0
+offset_bottom = 336.0
+
+[node name="Label" type="Label" parent="LoadGameButton"]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 90.0
+offset_bottom = 36.0
+scale = Vector2(1.4, 1.4)
+text = "Load Game"
+
+[node name="VBoxContainerStats" type="VBoxContainer" parent="."]
+offset_left = 350.0
+offset_top = 70.0
+offset_right = 492.0
+offset_bottom = 216.0
+metadata/_edit_lock_ = true
+
+[node name="NameLabel" type="Label" parent="VBoxContainerStats"]
+layout_mode = 2
+text = "NAME:"
+metadata/_edit_lock_ = true
+
+[node name="LevelLabel" type="Label" parent="VBoxContainerStats"]
+layout_mode = 2
+text = "LEVEL:"
+metadata/_edit_lock_ = true
+
+[node name="HPLabel" type="Label" parent="VBoxContainerStats"]
+layout_mode = 2
+text = "HP:"
+metadata/_edit_lock_ = true
+
+[node name="XPLabel" type="Label" parent="VBoxContainerStats"]
+layout_mode = 2
+text = "XP:"
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(416, 412)
+texture = ExtResource("1_172wv")
