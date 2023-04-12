@@ -5,5 +5,6 @@ extends Panel
 @export var item: Item
 
 func _ready():
-	assert (item in Item.RECOGNIZED_ITEM_ID_ARRAY)
+	if (item != null):
+		assert (item in Item.RECOGNIZED_ITEM_ID_ARRAY)
 	

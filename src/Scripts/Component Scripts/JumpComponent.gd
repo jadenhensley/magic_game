@@ -50,11 +50,11 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	if (parent_node.IS_PLAYER):
-		if (Input.is_action_just_pressed("up")):
+		if (Input.is_action_just_pressed("up") or Input.is_action_just_pressed("gamepad_jump_button") or Input.is_action_just_pressed("up_stick")):
 			jump_started = true
 			jump_released = false
 			print("jump started")
-		if (Input.is_action_just_released("up")):
+		if (Input.is_action_just_released("up") or Input.is_action_just_released("gamepad_jump_button") or Input.is_action_just_released("up_stick")):
 			jump_started = false
 			jump_released = true
 			print("jump released")

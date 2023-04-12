@@ -1,6 +1,6 @@
-[gd_scene load_steps=25 format=3 uid="uid://colewe448o40b"]
+[gd_scene load_steps=27 format=3 uid="uid://bi2d5glfvus06"]
 
-[ext_resource type="Script" path="res://src/Scenes/Node2D_Scene.gd" id="1_7m56y"]
+[ext_resource type="Script" path="res://src/Scenes/DefaultLevel.gd" id="1_olp42"]
 [ext_resource type="Script" path="res://src/Scripts/World Object Scripts/GroundConstructor.gd" id="2_w5h10"]
 [ext_resource type="Texture2D" uid="uid://sxw1l2jhnh2i" path="res://Assets/bushes.png" id="3_irgeh"]
 [ext_resource type="PackedScene" uid="uid://ca5grx0fi4o55" path="res://src/TileMaps/tile_map_ground.tscn" id="4_043dl"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://2a3urxgsttji" path="res://src/Scenes/GUI Scenes/scene_transition.tscn" id="8_esjjy"]
 [ext_resource type="Script" path="res://src/Resources/SceneTransitionResource.gd" id="9_g162n"]
 [ext_resource type="PackedScene" uid="uid://dqn5vpwivylui" path="res://src/Scenes/GUI Scenes/inventory.tscn" id="10_pmrxp"]
+[ext_resource type="Texture2D" uid="uid://3vdfievqblgd" path="res://Assets/Images/CursorAimingRetical.png" id="11_tp7y4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mqolk"]
 size = Vector2(63.2096, 5.60898)
@@ -44,6 +45,9 @@ size = Vector2(2.14131, 24.4586)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_frxfb"]
 size = Vector2(2.14131, 24.4586)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ib5e2"]
+size = Vector2(69.8103, 2.7793)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h205j"]
 size = Vector2(48, 96)
 
@@ -61,14 +65,14 @@ play_animation = true
 transition_animation_name = "dissolve"
 transition_speed = 0.0
 
-[node name="Node2D_Scene" type="Node2D"]
-script = ExtResource("1_7m56y")
+[node name="DefaultLevel" type="Node2D"]
+script = ExtResource("1_olp42")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -2190.0
-offset_top = -1946.0
-offset_right = 6200.0
-offset_bottom = 981.0
+offset_left = -1786.0
+offset_top = -2052.0
+offset_right = 6604.0
+offset_bottom = 875.0
 color = Color(0.584314, 0.709804, 1, 1)
 
 [node name="GroundConstructor" type="Node2D" parent="." groups=["ground_tile"]]
@@ -201,9 +205,15 @@ scale = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_frxfb")
 metadata/_edit_lock_ = true
 
-[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("jump_component")]
+[node name="InvisibleCeilingCollisionShape2D" type="CollisionShape2D" parent="TileMapGround/GroundStaticBody2D"]
+position = Vector2(592.25, -273.307)
+scale = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_ib5e2")
+
+[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("cursor_sprite", "jump_component")]
 position = Vector2(379, 210)
 script = ExtResource("5_ct6bp")
+cursor_sprite = NodePath("CursorAimingRetical")
 speed = Vector2(100, 5)
 gravity = 20
 jump_strength = 500
@@ -237,15 +247,26 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="PlayerInventoryMenu" parent="Player/Camera2D" instance=ExtResource("10_pmrxp")]
+visible = false
 position = Vector2(-379, -210)
 
 [node name="LabelFPS" type="Label" parent="Player/Camera2D"]
-visible = false
 offset_top = -100.0
 offset_right = 40.0
 offset_bottom = -74.0
 scale = Vector2(3, 3)
 text = "FPS: "
+
+[node name="LabelMagicTimer" type="Label" parent="Player/Camera2D"]
+offset_top = -200.0
+offset_right = 40.0
+offset_bottom = -174.0
+text = "USAGE: COOLDOWN:"
+
+[node name="CursorAimingRetical" type="Sprite2D" parent="Player"]
+position = Vector2(153, 19)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("11_tp7y4")
 
 [node name="SceneTransitionFade" parent="." instance=ExtResource("8_esjjy")]
 scene_transition_resource = SubResource("Resource_3otu6")

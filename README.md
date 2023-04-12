@@ -164,8 +164,25 @@ I want the core feature of this game to be its gameplay mechanics and features. 
 
 ## Development Log.
 
+### (4-11-2023)
+
+(jaden)
+- Fixed introduction animation bug.
+- Implementing Xbox 360/One/Series Controller support.
+	- Detect if gamepad is being used versus keyboard being used.
+	- Left Stick is used for movement.
+- Implementing cursor.
+	- Mouse cursor
+	- Controller cursor
+- Implementing bullets. (TODO LATER)
+- Made first magic ability: Levatation Ability.
+	- Has "usage" timer and "cooldown" timer.
+		- Uses the cursor I implemented.
+
+
 #### (4-10-2023)
 
+(jaden)
 - Started designing and developing the inventory/menu.
 
 #### (4-9-2023)
