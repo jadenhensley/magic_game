@@ -18,6 +18,15 @@ class_name Player
 @onready var magic_timer_label = $Camera2D/LabelMagicTimer
 @onready var magic_timer_label_text = "MAGIC USAGE: %d \nMAGIC COOLDOWN: %d"
 
+enum ANIMATION_STATE {
+	IDLE,
+	WALKING,
+	JUMPING,
+	FALLING,
+}
+
+@onready var animation_state: ANIMATION_STATE = ANIMATION_STATE.IDLE
+
 func get_gamepad_axis_data() -> Dictionary:
 	var gamepad_id: int
 	var joy_axis_left_x_strength: float
@@ -104,7 +113,7 @@ func levatation_spell() -> void:
 		
 		if (magic_timer_usage.time_left > 1):
 			if (magic_timer_cooldown.is_stopped()):
-				var start_pos_centered = self.get_position_delta() + Vector2(24, 48)
+				var start_pos_centered = self.get_position_delta() + Vector2(48, 48)
 				direction = (cursor_sprite.position - start_pos_centered)
 				velocity = direction * 1.5
 	if (not magic_timer_usage.is_stopped() and magic_timer_usage.time_left < 1):
@@ -149,6 +158,56 @@ func _draw() -> void:
 	pass
 #	for raycast in raycasts_below:
 #		draw_rect(Rect2(raycast.position.x, raycast.position.y,5, 5), Color(1,0,0), true)
+
+func animate() -> void:
+	var player_animated_sprite: AnimatedSprite2D = get_node("PlayerAnimatedSprite2D")
+
+	if (animation_state == ANIMATION_STATE.IDLE):
+		player_animated_sprite.animation = "idle"
+	if (animation_state == ANIMATION_STATE.WALKING):
+		player_animated_sprite.animation = "walking"
+	if (animation_state == ANIMATION_STATE.JUMPING):
+		player_animated_sprite.animation = "jumping"
+	if (animation_state == ANIMATION_STATE.FALLING):
+		player_animated_sprite.animation = "falling"
+
+	player_animated_sprite.play()
+	
+	
+	var hands_items_sprite: Sprite2D = get_node("HandsItemsSprite2D")
+#	hands_items_sprite.position = cursor_sprite.position
+	hands_items_sprite.position.y = 35 + player_animated_sprite.frame
+	
+	if (self.global_position.x >= cursor_sprite.global_position.x):
+		hands_items_sprite.flip_h = false
+		player_animated_sprite.flip_h = false		
+	else:
+		hands_items_sprite.flip_h = true
+		player_animated_sprite.flip_h = true
+
+	
+	hands_items_sprite.look_at(cursor_sprite.global_position)
+	if (hands_items_sprite.flip_h == false):
+		hands_items_sprite.rotation_degrees += 180
+#	var r = hands_items_sprite.rotation_degrees
+#	print("r: ", r)
+#	print("cursor.global_position: ", cursor_sprite.global_position)
+#	print("player.global_position: ", self.global_position)
+#
+	
+#	if (90 <= r and r <= 270):
+#		hands_items_sprite.flip_h = true
+#	else:
+#		hands_items_sprite.flip_h = false
+#
+#	var direction: Vector2 = cursor_sprite.position - self.position
+#	var angle: float = direction.angle_to(Vector2.RIGHT)
+#	hands_items_sprite.rotation = angle
+	
+#	hands_items_sprite.look_at(cursor_sprite.position)
+#	hands_items_sprite.position = player_animated_sprite.position + cursor_sprite.position
+#	hands_items_sprite.pos.y = 35 + player_animated_sprite.frame
+	
 
 func get_input_direction_x() -> int:
 	var axis_data: Dictionary = get_gamepad_axis_data()
@@ -212,11 +271,22 @@ func _on_area_2d_area_entered(area):
 
 func _process(delta) -> void:
 	direction = get_input_direction_xy()
+		
+	
+	if is_on_floor():
+		if (direction.x == 0):
+			animation_state = ANIMATION_STATE.IDLE
+		else:
+			animation_state = ANIMATION_STATE.WALKING
+	else:
+		animation_state = ANIMATION_STATE.FALLING
 	
 	if (Input.get_action_strength("run")):
 		velocity.x = speed.x * 1.4 * direction.x
+		$PlayerAnimatedSprite2D.speed_scale = 1.4
 	else:
 		velocity.x = speed.x * direction.x
+		$PlayerAnimatedSprite2D.speed_scale = 1
 
 #	move_local_x(direction.x * speed.x, true)
 
@@ -230,6 +300,7 @@ func _process(delta) -> void:
 
 	if (IS_PAUSED == false):
 		move_and_slide(); move_and_slide()
+		animate()
 	
 #	if (player_status_vertical == PlayerState.PLAYER_IN_AIR) or (player_status_vertical == PlayerState.PLAYER_ON_LADDER): 
 #		if (player_status_vertical == PlayerState.PLAYER_IN_AIR):
