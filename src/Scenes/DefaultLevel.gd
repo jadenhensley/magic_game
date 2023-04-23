@@ -14,7 +14,7 @@ extends Node2D
 @onready var fps_label_text: String = "FPS: %d"
 @onready var wait_for_intro_animation_played: bool = false
 
-@onready var skip_intro_scene: bool = true
+@onready var skip_intro_scene: bool = false
 @onready var display_fps: bool = false
 
 # Called when the node enters the scene tree for the first time.
