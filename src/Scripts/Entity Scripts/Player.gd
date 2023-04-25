@@ -184,11 +184,37 @@ func animate() -> void:
 	else:
 		hands_items_sprite.flip_h = true
 		player_animated_sprite.flip_h = true
-
 	
-	hands_items_sprite.look_at(cursor_sprite.global_position)
-	if (hands_items_sprite.flip_h == false):
-		hands_items_sprite.rotation_degrees += 180
+	if (direction.x > 0):
+		player_animated_sprite.flip_h = true
+	if (direction.x < 0):
+		player_animated_sprite.flip_h = false
+	
+	print("P pos: ", self.position.x+20, " ", self.position.y+20)
+	print("C pos: ", cursor_sprite.position)
+	
+	if (0 <= cursor_sprite.position.x and cursor_sprite.position.x <= 70) and (0 <= cursor_sprite.position.y and cursor_sprite.position.y <= 80):
+		hands_items_sprite.position.y = 35 + player_animated_sprite.frame
+		hands_items_sprite.rotation_degrees = 0
+		if (cursor_sprite.position.x >= 30):
+			if (direction.x != 0):
+				match direction.x:
+					-1:
+						hands_items_sprite.flip_h = true
+					1:
+						hands_items_sprite.flip_h = false
+			else:
+				hands_items_sprite.flip_h = true
+			if (direction.x == 0):
+				player_animated_sprite.flip_h = true		
+		else:
+			hands_items_sprite.flip_h = false
+			if (direction.x == 0):
+				player_animated_sprite.flip_h = false
+	else:
+		hands_items_sprite.look_at(cursor_sprite.global_position)
+		if (hands_items_sprite.flip_h == false):
+			hands_items_sprite.rotation_degrees += 180
 #	var r = hands_items_sprite.rotation_degrees
 #	print("r: ", r)
 #	print("cursor.global_position: ", cursor_sprite.global_position)
@@ -206,7 +232,6 @@ func animate() -> void:
 	
 #	hands_items_sprite.look_at(cursor_sprite.position)
 #	hands_items_sprite.position = player_animated_sprite.position + cursor_sprite.position
-#	hands_items_sprite.pos.y = 35 + player_animated_sprite.frame
 	
 
 func get_input_direction_x() -> int:

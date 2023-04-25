@@ -1,7 +1,7 @@
-[gd_scene load_steps=37 format=3 uid="uid://de5ggy8df0s66"]
+[gd_scene load_steps=36 format=3 uid="uid://de5ggy8df0s66"]
 
 [ext_resource type="Script" path="res://src/Scenes/DefaultLevel.gd" id="1_olp42"]
-[ext_resource type="Texture2D" uid="uid://r2wuad5a0elm" path="res://Assets/Images/Branches.png" id="2_b7frh"]
+[ext_resource type="Texture2D" uid="uid://b7bpgqg5t5s4u" path="res://Assets/Atlases/branches_atlas.png" id="2_fw860"]
 [ext_resource type="Script" path="res://src/Scripts/World Object Scripts/GroundConstructor.gd" id="2_w5h10"]
 [ext_resource type="Script" path="res://src/Scripts/Entity Scripts/Player.gd" id="5_ct6bp"]
 [ext_resource type="PackedScene" uid="uid://d0wtml2jxaw87" path="res://src/Components/jump_component.tscn" id="6_gtpll"]
@@ -12,9 +12,6 @@
 [ext_resource type="Script" path="res://src/Resources/SceneTransitionResource.gd" id="9_g162n"]
 [ext_resource type="PackedScene" uid="uid://dqn5vpwivylui" path="res://src/Scenes/GUI Scenes/inventory.tscn" id="10_pmrxp"]
 [ext_resource type="Texture2D" uid="uid://3vdfievqblgd" path="res://compiled/windows/Assets/Images/CursorAimingRetical.png" id="11_tp7y4"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b3uy5"]
-atlas = ExtResource("2_b7frh")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4alob"]
 size = Vector2(40, 40)
@@ -197,7 +194,9 @@ offset_bottom = 938.0
 color = Color(0.584314, 0.709804, 1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_b3uy5")
+position = Vector2(290, 351)
+scale = Vector2(3, 3)
+texture = ExtResource("2_fw860")
 
 [node name="GroundConstructor" type="Node2D" parent="." groups=["ground_tile"]]
 script = ExtResource("2_w5h10")
@@ -256,7 +255,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("7_umxw6")
 hframes = 4
 vframes = 4
-frame = 13
+frame = 10
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 drag_horizontal_enabled = true
